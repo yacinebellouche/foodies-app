@@ -1,8 +1,8 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
-import classes from './meal-item.module.css';
-
+import classes from "./meal-item.module.css";
+//Note that in NextJs, we can use the fill prop in Image  to set the width and height directly
 export default function MealItem({ title, slug, image, summary, creator }) {
   return (
     <article className={classes.meal}>
