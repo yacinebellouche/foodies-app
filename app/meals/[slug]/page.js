@@ -2,6 +2,19 @@ import classes from "./page.module.css";
 import Image from "next/image";
 import { getMealById } from "@/lib/meals";
 import { notFound } from "next/navigation";
+
+//for dynamic metaData
+export async function generatedMetadata({}) {
+  const meal = getMealById(params.meal.slug);
+  if (!meal) {
+    notFound();
+  }
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+}
+
 export default function MealDetailPage({ params }) {
   const meal = getMealById(params.slug);
   if (!meal) {
